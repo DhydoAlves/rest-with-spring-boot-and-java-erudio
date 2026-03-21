@@ -1,0 +1,37 @@
+# --- Java & Maven ---
+*.class
+*.jar
+*.war
+*.ear
+target/
+bin/
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- Eclipse ---
+.settings/
+.classpath
+.project
+.factorypath
+.metadata/
+
+# --- Sistema (Windows/Linux/Mac) ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.bak
+*.ini
+
+# --- Logs & Temporários ---
+*.log
+hs_err_pid*
+.mtj.tmp/
+
+# --- Segurança (Nunca subir chaves) ---
+*.pem
+*.ppk
