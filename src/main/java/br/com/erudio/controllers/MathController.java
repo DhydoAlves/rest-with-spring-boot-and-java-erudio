@@ -1,11 +1,12 @@
 package br.com.erudio.controllers;
 
 import br.com.erudio.services.MathService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/math")
+
 public class MathController {
 
     private final MathService mathService;
@@ -29,10 +30,43 @@ public class MathController {
 
         return mathService.subtraction(numberOne, numberTwo);
     }
-@GetMapping("/average")
-    public Double average(@RequestParam String numbers) {
+    @GetMapping("/average/{numbers}")
+    public  Double average(@PathVariable String numbers) {
         return mathService.average(numbers);
     }
+
+    @GetMapping("/multiplication/{numberOne}/{numberTwo}")
+    public Double multiplication(
+            @PathVariable String numberOne,
+            @PathVariable String numberTwo) {
+
+        return mathService.multiplication(numberOne, numberTwo);
+    }
+
+    @RequestMapping("/division/{numberOne}/{numberTwo}")
+    public Double division(
+            @PathVariable("numberOne") String numberOne,
+            @PathVariable("numberTwo") String numberTwo) {
+
+        return mathService.division(numberOne, numberTwo);
+    }
+    @GetMapping("/sqrt/{numberOne}")
+    public Double sqrt(@PathVariable String numberOne) {
+
+        return mathService.sqrt(numberOne);
+
+    }
+
+    @RequestMapping("/power/{numberOne}/{numberTwo}")
+    public Double power(
+            @PathVariable("numberOne") String numberOne,
+            @PathVariable("numberTwo") String numberTwo) {
+
+        return mathService.power(numberOne, numberTwo);
+
+    }
+
+
 
 }
 

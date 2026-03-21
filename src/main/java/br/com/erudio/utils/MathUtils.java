@@ -1,10 +1,10 @@
-package br.com.erudio.controllers.utils;
+package br.com.erudio.utils;
 
 import br.com.erudio.Exception.UnsupportedMathOperationException;
 
 public class MathUtils {
 
-    private Double convertToDouble(String strNumber) throws IllegalArgumentException {
+    public static Double convertToDouble(String strNumber) throws IllegalArgumentException {
 
         if (strNumber == null || strNumber.isEmpty())
             throw new UnsupportedMathOperationException("Please correct it for me and enter a numeric value.");
@@ -12,11 +12,11 @@ public class MathUtils {
         return Double.parseDouble(number);
 
     }
-    private boolean isNumeric(String strNumber) {
+    public static boolean isNumeric(String strNumber) {
         if (strNumber == null || strNumber.isEmpty()) return false;
         String number = strNumber.replace(",", ".");// R$ 5,00  USD 5.00
         return number.matches("[-+]?\\d+\\.?\\d*|[-+]?\\.\\d+");
 
     }
-
+//
 }
